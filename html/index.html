@@ -27,7 +27,7 @@
 					</div>
 					<div class="bottom">
 
-						<input type="text" v-model='itemName' class="form-control" placeholder="add details">
+						<input type="text" v-model='itemName' class="form-control" placeholder="add details"v-on:keyup.enter='addnewTask'>
 						<button type="button" @click='addnewTask' class="btn">Add</button>
 						<ul>
 							<template v-for='(task, id) in allTasks'>

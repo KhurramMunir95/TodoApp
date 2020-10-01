@@ -1,0 +1,148 @@
+* {
+	box-sizing: border-box;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+[class*="col-"] {
+	float: left;
+	padding: 15px;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	top: 10px;
+	position: relative;
+}
+
+ul li{
+	margin-top: 10px;
+	font-family: calibri;
+	font-weight: 400;
+	font-size: 20px;
+}	
+
+.completed{
+	text-decoration: line-through;
+}
+
+div.container{
+	margin: auto;
+	width: 100%;
+	/*left: 400px;
+	position: relative;*/
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.form-control{
+	height: 40px;
+	width: 80%;
+	border-radius: 10px;
+	border-color: silver;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.form-control:focus{
+	outline-color: silver; 
+}
+
+.form-control:blur{
+	outline-color: silver; 
+}
+
+.btn{
+	border-radius: 10px;
+	border-color:transparent;
+	padding: 10px;
+	width: 80px;
+	left: 10px;
+	position: relative;
+	color: white;
+	background-color: #2F80ED;
+	height: 40px;
+	cursor: pointer;
+}
+
+.del:hover, .btn:hover{
+	opacity: 0.8;
+}
+
+.del:active, .btn:active{
+	opacity: 1;
+}
+
+.del{
+	padding: 10px;
+	border-color: transparent;
+	border-radius: 4px;
+	background-color: #EB5757;
+	color: white;
+	font-size: 16px;
+	width: 160px;
+	float: right;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+div.nav a{
+	margin: 50px;
+	width:70px;
+	text-align: center;
+	cursor: pointer;
+	color: #333333;
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-family: calibri;
+	font-size: 18px;
+}
+
+.active{
+	border-bottom: 4px solid #2F80ED;
+	border-radius: 2px;
+	padding: 5px;
+}
+
+h1.title{
+	text-align: center;
+	font-family: calibri;
+	color: #333333;
+	margin-bottom: 50px;
+}
+
+footer{
+	margin-top:200px; 
+	text-align: center;
+	color: #A9A9A9;
+	font-weight: bold;
+}
+
+@media(max-width: 992px){
+	[class*="col-"] {
+		width: 100%;
+	}
+
+	div.nav a{
+		width: 40px;
+		margin: 30px;
+	}
+
+}

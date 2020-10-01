@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TodoApp</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- style sheet -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+</head>
+<body>
+
+	<div id="app">
+		<!-- Start Container -->
+		<div class="container">
+			<div class="row">
+				<div class="col-4"></div>
+
+				<div class="col-5">
+					<h1 class="title">#todo</h1>
+					<div class="nav">
+						<a @click='filter= "all" ' :class="filter == 'all' ? 'nav-item active' : 'nav-item' ">All</a>
+						<a @click='filter= "activeTasks" ' :class="filter == 'activeTasks' ? 'nav-item active' : 'nav-item' ">Active</a>
+						<a @click='filter= "completedTasks" ' :class="filter == 'completedTasks' ? 'nav-item active' : 'nav-item' ">Completed</a>
+						<hr>
+					</div>
+					<div class="bottom">
+
+						<input type="text" v-model='itemName' class="form-control" placeholder="add details">
+						<button type="button" @click='addnewTask' class="btn">Add</button>
+						<ul>
+							<template v-for='(task, id) in allTasks'>
+								<li :key='id'>
+									<input type="checkbox" v-model='task.isCompleted'>
+									<label :for='task.item' :class='{completed : task.isCompleted}'>{{task.item}}</label>
+									<label @click='deleteTask(task, id)' for="delete" v-if='filter== "completedTasks"' style="cursor: pointer;"><span class="material-icons" style="float: right;">delete_outline</span></label>
+								</li>
+							</template>
+							<li>
+								<button class="del" v-if='filter == "completedTasks" && showDeleteAllButton' @click='deleteAll()'>
+									<span class="material-icons" style="font-size: 20px; top: 5px; position: relative;">delete_outline
+									</span>
+									delete all
+								</button>
+							</li>
+						</ul>
+						
+					</div>	
+				</div>
+			</div>
+		</div>
+		<!-- End Container -->
+
+		<!-- Footer -->
+		<footer><p>Khurram Munir @ DevChallenges.io</p></footer>
+	</div>
+	<!-- Vue js -->
+	<script type="text/javascript" src="../js/index.js"></script>
+</body>
+</html>

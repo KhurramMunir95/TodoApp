@@ -34,7 +34,7 @@
 								<li :key='id'>
 									<input type="checkbox" v-model='task.isCompleted'>
 									<label :for='task.item' :class='{completed : task.isCompleted}'>{{task.item}}</label>
-									<label @click='deleteTask(task, id)' for="delete" v-if='filter== "completedTasks"' style="cursor: pointer;"><span class="material-icons" style="float: right;">delete_outline</span></label>
+									<label @click='deleteTask(task, id)' for="delete" v-if='filter== "completedTasks"' style="cursor: pointer;"><span class="material-icons" style="float: right;color: #BDBDBD;">delete_outline</span></label>
 								</li>
 							</template>
 							<li>
